@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Linhas: ");
+        int l = s.nextInt();
+        System.out.print("Colunas: ");
+        int c = s.nextInt();
+        
+        int[][] matriz = new int[l][c], transposta = new int[c][l];
+
+        System.out.println("Digite os elementos da matriz:");
+        for (int i = 0; i < l; i++)
+            for (int j = 0; j < c; j++) {
+                System.out.print("[" + i + "][" + j + "]: ");
+                transposta[j][i] = matriz[i][j] = s.nextInt();
+            }
+
+        System.out.println("Matriz Transposta:");
+        for (int[] linha : transposta)
+            System.out.println(Arrays.toString(linha));
+
+        s.close();
+    }
+}

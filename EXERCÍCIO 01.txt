@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int[][] a = new int[3][3], b = new int[3][3], soma = new int[3][3];
+
+        System.out.println("Digite os valores da primeira matriz:");
+        preencherMatriz(s, a);
+        System.out.println("Digite os valores da segunda matriz:");
+        preencherMatriz(s, b);
+
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                soma[i][j] = a[i][j] + b[i][j];
+
+        System.out.println("Matriz Soma:");
+        imprimirMatriz(soma);
+        s.close();
+    }
+
+    static void preencherMatriz(Scanner s, int[][] m) {
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                m[i][j] = s.nextInt();
+    }
+
+    static void imprimirMatriz(int[][] m) {
+        for (int[] linha : m)
+            System.out.println(Arrays.toString(linha));
+    }
+}

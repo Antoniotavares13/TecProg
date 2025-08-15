@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main { // Alterado para "Main" para corresponder ao nome do arquivo
+    public static void main(String[] args) {
+        String[][] usuarios = {{"Alessandro", "Ale123"}, {"alessandro", "ale123"}};
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Login: ");
+        String login = s.next();
+        System.out.print("Senha: ");
+        String senha = s.next();
+
+        boolean acesso = Arrays.stream(usuarios).anyMatch(u -> u[0].equals(login) && u[1].equals(senha));
+
+        System.out.println(acesso ? "Acesso permitido!" : "Login ou senha incorretos.");
+        s.close();
+    }
+}
